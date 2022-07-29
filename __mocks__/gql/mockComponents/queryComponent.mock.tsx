@@ -1,5 +1,5 @@
 import React from "react";
-//import { GetValues } from "@gql/shared/queries";
+import {GetValues} from "./getValues";
 
 interface QueryComponentMockProps {
   outQueryResult: { data?: any, loading?: any, error?: any },
@@ -23,18 +23,18 @@ const QueryComponentMock = ({
     fragments = {},
     notifyOnNetworkStatusChange = true,
   }: QueryComponentMockProps ) => {
-  // const { data, loading, error} = GetValues({
-  //     params,
-  //     options,
-  //     query,
-  //     fetchPolicy,
-  //     fragments,
-  //     notifyOnNetworkStatusChange,
-  // });
+  const { data, loading, error} = GetValues({
+      params,
+      options,
+      query,
+      fetchPolicy,
+      fragments,
+      notifyOnNetworkStatusChange,
+  });
 
-  // outQueryResult.data = data;
-  // outQueryResult.loading = loading;
-  // outQueryResult.error = error;
+  outQueryResult.data = data;
+  outQueryResult.loading = loading;
+  outQueryResult.error = error;
 
   return <div>Query Mock</div>;
 };

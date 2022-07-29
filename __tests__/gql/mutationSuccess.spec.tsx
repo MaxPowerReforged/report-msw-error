@@ -7,8 +7,8 @@ import {mutationPayloadMock} from "../../__mocks__/entities/mutationMocks";
 import {TEST_MUTATION} from "../../gql/mutation";
 import {mutationHandlerSuccess} from "../../__mocks__/gql/handlers/mutationHandlerSuccess";
 
-describe('login mutation', () => {
-  it('should login user when using correct credentials', async () => {
+describe('test mutation', () => {
+  it('success', async () => {
     mockServer.use(mutationHandlerSuccess);
 
     const apolloClient = buildApolloTestClient();
