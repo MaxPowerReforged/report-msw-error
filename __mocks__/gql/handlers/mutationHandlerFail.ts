@@ -1,7 +1,7 @@
 import {graphql} from "msw";
 import {mutationPayloadMock, mutationResultMock} from "../../entities/mutationMocks";
 
-export const mutationHandler = graphql.mutation('TEST_MUTATION', (req, res, ctx) => {
+export const mutationHandlerFail = graphql.mutation('TEST_MUTATION', (req, res, ctx) => {
   console.log(req, ctx); // log the request that has been forwarded to the handler
 
   // The variables object is empty
@@ -11,7 +11,7 @@ export const mutationHandler = graphql.mutation('TEST_MUTATION', (req, res, ctx)
   {
     return res(
       ctx.data({
-        login: mutationResultMock
+        test: mutationResultMock,
       }),
       ctx.delay(10)
     );

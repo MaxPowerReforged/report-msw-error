@@ -1,15 +1,15 @@
 import { render, waitFor } from "@testing-library/react";
-import {mockServer} from "../../../__mocks__/gql/server";
-import MutationComponentMock from "../../../__mocks__/gql/mockComponents/mutationComponent.mock";
-import {mutationPayloadMock} from "../../../__mocks__/entities/mutationMocks";
-import {buildApolloTestClient} from "../../../__mocks__/gql/client/mockClient";
 import {ApolloProvider} from "@apollo/client";
-import {mutationHandler} from "../../../__mocks__/gql/handlers/mutationHandler";
-import {TEST_MUTATION} from "../../../gql/mutation";
+import {mockServer} from "../../__mocks__/gql/server";
+import {mutationHandlerFail} from "../../__mocks__/gql/handlers/mutationHandlerFail";
+import {buildApolloTestClient} from "../../__mocks__/gql/client/mockClient";
+import MutationComponentMock from "../../__mocks__/gql/mockComponents/mutationComponent.mock";
+import {mutationPayloadMock} from "../../__mocks__/entities/mutationMocks";
+import {TEST_MUTATION} from "../../gql/mutation";
 
 describe('login mutation', () => {
   it('should login user when using correct credentials', async () => {
-    mockServer.use(mutationHandler);
+    mockServer.use(mutationHandlerFail);
 
     const apolloClient = buildApolloTestClient();
 

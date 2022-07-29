@@ -3,4 +3,7 @@ export const mutationPayloadMock = {
   password: 'anaconda123'
 }
 
-export const mutationResultMock = { accessToken: 'accessToken' };
+export const mutationResultMock = {
+  accessToken: 'accessToken',
+  errors: {},
+};
